@@ -70,26 +70,41 @@ export const SearchBox = () => {
 
 
     return (
-        <Container maxWidth="lg" sx={styles.container}>
-            <Grid container maxWidth="md" sx={{ paddingY: '2rem' }} spacing={{ xs: 2, md: 4 }} columns={{ xs: 12, sm: 12, md: 12 }}>
-                <Grid item xs={12} sm={12} md={6} sx={styles.center}>
-                    <Stack sx={{ width: { xs: '90%', md: '100%' } }}>
-                        <Typography variant="h5">Name or Number</Typography>
-                        <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-                            <Stack direction="row" alignItems="center" spacing={2}>
-                                <FTextField name="search" sx={styles.inputText} />
-                                <SearchOutlined sx={styles.icon} />
-                            </Stack>
-                        </FormProvider>
-                        <Typography>Use the Advanced Search to explore Pokémon by type, weakness, Ability, and more!</Typography>
-                    </Stack>
-                </Grid>
-                <Grid item xs={12} sm={12} md={6} sx={styles.center}>
-                    <Box sx={styles.boxRight}>
-                        <Typography variant="h6">Search for a Pokémon by name or using its National Pokédex number.</Typography>
-                    </Box>
-                </Grid>
-            </Grid>
-        </Container>
+      <Container maxWidth="lg" sx={styles.container}>
+        <Grid
+          container
+          maxWidth="md"
+          sx={{ paddingY: "2rem" }}
+          spacing={{ xs: 2, md: 4 }}
+          columns={{ xs: 12, sm: 12, md: 12 }}
+        >
+          <Grid item xs={12} sm={12} md={6} sx={styles.center}>
+            <Stack sx={{ width: { xs: "90%", md: "100%" } }}>
+              <Typography variant="h5">Name or Number</Typography>
+              <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
+                <Stack direction="row" alignItems="center" spacing={2}>
+                  <FTextField name="search" sx={styles.inputText} />
+                  <SearchOutlined
+                    sx={styles.icon}
+                    onClick={handleSubmit(onSubmit)}
+                  />
+                </Stack>
+              </FormProvider>
+              <Typography>
+                Use the Advanced Search to explore Pokémon by type, weakness,
+                Ability, and more!
+              </Typography>
+            </Stack>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} sx={styles.center}>
+            <Box sx={styles.boxRight}>
+              <Typography variant="h6">
+                Search for a Pokémon by name or using its National Pokédex
+                number.
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
     );
 };
